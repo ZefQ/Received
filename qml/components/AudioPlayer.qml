@@ -101,6 +101,7 @@ DockedPanel {
                     id: controls
                     width: parent.width
                     property real itemWidth: width / 4
+                    visible: !audio.isLoading()
 
                     IconButton {
                         width: controls.itemWidth
@@ -195,27 +196,27 @@ DockedPanel {
                 return;
 
             case Audio.ResourceError:
-                errorMessage = qsTr("The stream URL is not valid.")
+                errorMessage = "The stream URL is not valid."
                 break;
 
             case Audio.FormatError:
-                errorMessage = qsTr("The stream format is not supported.")
+                errorMessage = "The stream format is not supported."
                 break;
 
             case Audio.NetworkError:
-                errorMessage = qsTr("The network is not available.")
+                errorMessage = "The network is not available."
                 break;
 
             case Audio.AccessDenied:
-                errorMessage = qsTr("No permessions to access the stream.")
+                errorMessage = "No permessions to access the stream."
                 break;
 
             case Audio.ServiceMissing:
-                errorMessage = qsTr("The audio service could not be instantiated.")
+                errorMessage = "The audio service could not be instantiated."
                 break;
 
             default:
-                errorMessage = qsTr("An unknown error occured.")
+                errorMessage = "An unknown error occured."
                 break;
             }
 

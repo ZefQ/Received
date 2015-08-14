@@ -16,13 +16,13 @@ Page {
         PullDownMenu {
                     id: pulleyMeny
                     MenuItem {
-                        text: "Top 100"
+                        text: qsTr("Top 100")
                         onClicked: {
                             pageStack.push(Qt.resolvedUrl("Browse.qml"), {listType: Utils.Top100});
                         }
                     }
                     MenuItem {
-                        text: "Search"
+                        text: qsTr("Search")
                         onClicked: {
                             pageStack.push(Qt.resolvedUrl("Browse.qml"), {listType: Utils.Search});
                         }
@@ -32,7 +32,7 @@ Page {
 
         header: Column {
                     PageHeader {
-                        title: "Favorites"
+                        title: qsTr("Favorites")
                         width: favoritePage.width
                     }
                 }
@@ -91,7 +91,7 @@ Page {
                 id: favoriteContextMenu
                 ContextMenu {
                     MenuItem {
-                        text: "Remove from favorite"
+                        text: qsTr("Remove from favorite")
                         onClicked: {
                             remove()
                         }

@@ -5,38 +5,46 @@
     <name>Browse</name>
     <message>
         <source>Top 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Topp 100</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Favorites</source>
+        <translation type="vanished">Favoriter</translation>
     </message>
     <message>
         <source>Remove from favorite</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort från favoriter</translation>
     </message>
     <message>
         <source>Add to favorite</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till i favoriter</translation>
+    </message>
+    <message>
+        <source>Search station</source>
+        <translation type="vanished">Sök station</translation>
     </message>
 </context>
 <context>
     <name>Favorites</name>
     <message>
         <source>Top 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Topp 100</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>Favoriter</translation>
     </message>
     <message>
         <source>Remove from favorite</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort från favoriter</translation>
     </message>
 </context>
 </TS>
