@@ -22,7 +22,7 @@ function updateFavorites() {
 function removeFavorite(station) {
     console.log("Removing favorite:", station)
     DB.deleteStation(station)
-    updateFavorites()
+    favoritesModel.remove(getModelIndexFromStation(station))
 }
 
 function addFavorite(station) {

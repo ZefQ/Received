@@ -12,6 +12,7 @@ BASE = "http://rad.io/info"
 recomendedURL = "{0}/broadcast/editorialreccomendationsembedded".format(BASE)
 top100URL = "{0}/menu/broadcastsofcategory".format(BASE)
 searchURL = "{0}/index/searchembeddedbroadcast".format(BASE)
+categoriesURL = "{0}/menu/valuesofcategory".format(BASE)
 stationByIdURL = "{0}/broadcast/getbroadcastembedded".format(BASE)
 
 class Radio_API:
@@ -23,14 +24,20 @@ class Radio_API:
         response = self.doRequest(top100URL, params)
         pyotherside.send('updateStationList', response)
 
+    def getRecomendedStations(self):
+        response = self.doRequest(top100URL)
+        pyotherside.send('updateStationList', response)
+
+    def getCategories(self, params={"category": "language"}):
+        # 'genre', 'topic', 'country', 'city', 'language'
+        response = self.doRequest(categoriesURL, params)
+        pyotherside.send('log', "Categories Response: {0}".format(response))
+        #pyotherside.send('updateStationList', response)
+
     def getSearchResults(self, s):
         pyotherside.send('log', "Searching for: {}".format(s))
-        params = {
-            'q': s,
-            'start': '0',
-            'rows': '100',
-            'streamcontentformats': 'aac,mp3',
-        }
+        params = {"q": s, "start": "0", "rows": "100",
+            "streamcontentformats": "aac,mp3"}
         response = self.doRequest(searchURL, params)
         pyotherside.send('updateStationList', response)
 

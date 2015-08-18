@@ -12,7 +12,7 @@ Name:       harbour-received
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    Rad.io client
+Summary:    Received is a unofficial radio.net client
 Version:    0.1
 Release:    1
 Group:      Qt/Qt
@@ -21,14 +21,18 @@ URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-received.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
+Requires:   pyotherside-qml-plugin-python3-qt5 >= 1.3.0
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Multimedia)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+Received is a unofficial client for radio.net (rad.io)
+
+More functionality will come for now the is just search, top 100 and favorites(not connected to radio.net favorites)
 
 
 %prep
