@@ -19,6 +19,7 @@ Page {
                     id: pulleyMeny
                     MenuItem {
                         text: qsTr("Top 100")
+                        visible: listType !== Utils.Top100
                         onClicked: {
                             pageStack.replace(Qt.resolvedUrl("Browse.qml"), {listType: Utils.Top100});
                         }
