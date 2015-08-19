@@ -7,16 +7,17 @@ import "../components/js/Favorites.js" as FavoritesUtils
 Page {
     id: favoritePage
     allowedOrientations: Orientation.All
+    property bool firstPage: true
 
     SilicaListView {
         id: favoritesListView
-        VerticalScrollDecorator { flickable: issuesPageListView }
+        VerticalScrollDecorator { flickable: favoritesPageListView }
         anchors.fill: parent
 
         PullDownMenu {
                     id: pulleyMeny
                     MenuItem {
-                        text: qsTr("Top 100")
+                        text: qsTr("Browse")
                         onClicked: {
                             pageStack.push(Qt.resolvedUrl("Browse.qml"), {listType: Utils.Top100});
                         }
@@ -24,11 +25,10 @@ Page {
                     MenuItem {
                         text: qsTr("Search")
                         onClicked: {
-                            pageStack.push(Qt.resolvedUrl("Browse.qml"), {listType: Utils.Search});
+                            pageStack.push(Qt.resolvedUrl("Stations.qml"), {listType: Utils.Search});
                         }
                     }
                 }
-
 
         header: Column {
                     PageHeader {

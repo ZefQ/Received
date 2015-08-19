@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import pyotherside
-import threading
-import time
-import random
 import requests
 
 USER_AGENT = "XBMC Addon Radio"
@@ -11,8 +8,10 @@ BASE = "http://rad.io/info"
 
 recomendedURL = "{0}/broadcast/editorialreccomendationsembedded".format(BASE)
 top100URL = "{0}/menu/broadcastsofcategory".format(BASE)
+mostWantedURL = "{0}/account/getmostwantedbroadcastlists".format(BASE)
 searchURL = "{0}/index/searchembeddedbroadcast".format(BASE)
 categoriesURL = "{0}/menu/valuesofcategory".format(BASE)
+stationsByCategoriesURL = "{0}/menu/broadcastsofcategory".format(BASE)
 stationByIdURL = "{0}/broadcast/getbroadcastembedded".format(BASE)
 
 class Radio_API:
@@ -25,14 +24,34 @@ class Radio_API:
         pyotherside.send('updateStationList', response)
 
     def getRecomendedStations(self):
-        response = self.doRequest(top100URL)
+        response = self.doRequest(recomendedURL)
         pyotherside.send('updateStationList', response)
 
-    def getCategories(self, params={"category": "language"}):
+    def getLocalStations(self):
+        response = self.getMostWantedStations()
+        pyotherside.send('updateStationList', response['localBroadcasts'])
+
+    def getMostWantedStations(self):
+        # Available lists from most wanted
+        #   topBroadcasts, recommendedBroadcasts, localBroadcasts
+        # Lists that could be used if impementing login
+        #   historyBroadcasts, bookmarkedBroadcasts
+        params = {'sizeoflists': '100'}
+        return self.doRequest(mostWantedURL, params)
+
+
+    def getCategories(self, category):
         # 'genre', 'topic', 'country', 'city', 'language'
+        params = {"category": "_{0}".format(category)}
+        pyotherside.send('log', "getCategories for: {}".format(params))
         response = self.doRequest(categoriesURL, params)
-        pyotherside.send('log', "Categories Response: {0}".format(response))
-        #pyotherside.send('updateStationList', response)
+        pyotherside.send('updateCategories', response)
+
+    def getStationsByCategory(self, category, value):
+        params = {"category": "_{0}".format(category), "value": value}
+        pyotherside.send('log', "getStationsByCategory params: {0}".format(params))
+        response = self.doRequest(stationsByCategoriesURL, params)
+        pyotherside.send('updateStationList', response)
 
     def getSearchResults(self, s):
         pyotherside.send('log', "Searching for: {}".format(s))

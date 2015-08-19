@@ -12,28 +12,51 @@
         <translation>Sök</translation>
     </message>
     <message>
-        <source>Favorites</source>
-        <translation type="vanished">Favoriter</translation>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
     </message>
     <message>
-        <source>Remove from favorite</source>
-        <translation>Ta bort från favoriter</translation>
+        <source>Recommended</source>
+        <translation>Rekommenderade</translation>
     </message>
     <message>
-        <source>Add to favorite</source>
-        <translation>Lägg till i favoriter</translation>
+        <source>Genre</source>
+        <translation>Genre</translation>
     </message>
     <message>
-        <source>Search station</source>
-        <translation type="vanished">Sök station</translation>
+        <source>Topic</source>
+        <translation>Ämne</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>City</source>
+        <translation>Stad</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>Local</source>
+        <translation>Lokalt</translation>
+    </message>
+</context>
+<context>
+    <name>BrowseByCategory</name>
+    <message>
+        <source>Browse by</source>
+        <translation>Bläddra efter</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sök</translation>
     </message>
 </context>
 <context>
     <name>Favorites</name>
-    <message>
-        <source>Top 100</source>
-        <translation>Topp 100</translation>
-    </message>
     <message>
         <source>Search</source>
         <translation>Sök</translation>
@@ -45,6 +68,33 @@
     <message>
         <source>Remove from favorite</source>
         <translation>Ta bort från favoriter</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
+    </message>
+</context>
+<context>
+    <name>Stations</name>
+    <message>
+        <source>Search</source>
+        <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Remove from favorite</source>
+        <translation>Ta bort från favoriter</translation>
+    </message>
+    <message>
+        <source>Add to favorite</source>
+        <translation>Lägg till i favoriter</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Från</translation>
     </message>
 </context>
 <context>
@@ -60,6 +110,14 @@
     <message>
         <source>Favorites</source>
         <translation>Favoriter</translation>
+    </message>
+    <message>
+        <source>Recommended</source>
+        <translation>Rekommenderade</translation>
+    </message>
+    <message>
+        <source>Local</source>
+        <translation>Lokalt</translation>
     </message>
 </context>
 </TS>

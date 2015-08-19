@@ -33,7 +33,9 @@ OTHER_FILES += qml/harbour-received.qml \
     qml/pages/Favorites.qml \
     qml/components/js/Favorites.js \
     qml/pages/Browse.qml \
-    translations/harbour-received-sv.ts
+    translations/harbour-received-sv.ts \
+    qml/pages/Stations.qml \
+    qml/pages/BrowseByCategory.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
