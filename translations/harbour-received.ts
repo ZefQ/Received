@@ -73,6 +73,10 @@
         <source>Browse</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show player</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Stations</name>

@@ -15,20 +15,27 @@ Page {
         anchors.fill: parent
 
         PullDownMenu {
-                    id: pulleyMeny
-                    MenuItem {
-                        text: qsTr("Browse")
-                        onClicked: {
-                            pageStack.push(Qt.resolvedUrl("Browse.qml"), {listType: Utils.Top100});
-                        }
-                    }
-                    MenuItem {
-                        text: qsTr("Search")
-                        onClicked: {
-                            pageStack.push(Qt.resolvedUrl("Stations.qml"), {listType: Utils.Search});
-                        }
-                    }
+            id: pulleyMeny
+            MenuItem {
+                visible: player.isPlaying() && !player.open
+                text: qsTr("Show player")
+                onClicked: {
+                    player.open = true
                 }
+            }
+            MenuItem {
+                text: qsTr("Browse")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("Browse.qml"), {listType: Utils.Top100});
+                }
+            }
+            MenuItem {
+                text: qsTr("Search")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("Stations.qml"), {listType: Utils.Search});
+                }
+            }
+        }
 
         header: Column {
                     PageHeader {

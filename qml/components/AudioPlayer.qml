@@ -48,7 +48,7 @@ DockedPanel {
         MouseArea {
             id: opener
             anchors.fill: parent
-            onClicked: appWindow.showFullControls = !appWindow.showFullControls
+            onClicked: console.log("Show fullscreen player controls")
         }
 
         Row {

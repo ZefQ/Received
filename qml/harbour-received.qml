@@ -61,11 +61,6 @@ ApplicationWindow
             console.log('got message from python: ' + data);
         }
     }
-
-    Component.onCompleted: {
-        console.log(player.visibleSize)
-        player.open
-    }
 }
 
 

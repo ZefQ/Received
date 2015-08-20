@@ -2,6 +2,9 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AudioPlayer</name>
+</context>
+<context>
     <name>Browse</name>
     <message>
         <source>Top 100</source>
@@ -73,6 +76,10 @@
         <source>Browse</source>
         <translation>Bläddra</translation>
     </message>
+    <message>
+        <source>Show player</source>
+        <translation>Visa spelare</translation>
+    </message>
 </context>
 <context>
     <name>Stations</name>
@@ -119,5 +126,8 @@
         <source>Local</source>
         <translation>Lokalt</translation>
     </message>
+</context>
+<context>
+    <name>harbour-received</name>
 </context>
 </TS>
