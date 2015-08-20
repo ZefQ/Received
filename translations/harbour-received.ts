@@ -43,6 +43,10 @@
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show player</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BrowseByCategory</name>
@@ -52,6 +56,10 @@
     </message>
     <message>
         <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show player</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -98,6 +106,10 @@
     </message>
     <message>
         <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show player</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -43,6 +43,10 @@
         <source>Local</source>
         <translation>Lokalt</translation>
     </message>
+    <message>
+        <source>Show player</source>
+        <translation>Visa spelare</translation>
+    </message>
 </context>
 <context>
     <name>BrowseByCategory</name>
@@ -53,6 +57,10 @@
     <message>
         <source>Search</source>
         <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Show player</source>
+        <translation>Visa spelare</translation>
     </message>
 </context>
 <context>
@@ -99,6 +107,10 @@
     <message>
         <source>From</source>
         <translation>Från</translation>
+    </message>
+    <message>
+        <source>Show player</source>
+        <translation>Visa spelare</translation>
     </message>
 </context>
 <context>

@@ -8,7 +8,7 @@ License: LICENSE
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Received is a unofficial client for radio.net (rad.io). For now it is possible search, browse according to diffrent categories and favorites(not connected to radio.net favorites)
+  Received is a unofficial client for radio.net (rad.io). For now it is possible search, browse according to different categories and favourites(not connected to radio.net favourites)
 Configure: none
 Builder: qtc5
 PkgConfigBR:

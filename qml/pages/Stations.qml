@@ -19,6 +19,13 @@ Page {
         PullDownMenu {
                     id: pulleyMeny
                     MenuItem {
+                        visible: player.isPlaying() && !player.open
+                        text: qsTr("Show player")
+                        onClicked: {
+                            player.open = true
+                        }
+                    }
+                    MenuItem {
                         text: qsTr("Browse")
                         onClicked: {
                             pageStack.replaceAbove(
