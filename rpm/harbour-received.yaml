@@ -1,16 +1,14 @@
 Name: harbour-received
 Summary: Received is a unofficial radio.net client
-Version: 0.1
-Release: 1
+Version: 0.2
+Release: 2
 Group: Qt/Qt
 URL: http://example.org/
 License: LICENSE
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Received is a unofficial client for radio.net (rad.io)
-
-  More functionality will come for now the is just search, top 100 and favorites(not connected to radio.net favorites)
+  Received is a unofficial client for radio.net (rad.io). For now it is possible search, browse according to diffrent categories and favorites(not connected to radio.net favorites)
 Configure: none
 Builder: qtc5
 PkgConfigBR:
