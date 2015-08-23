@@ -4,6 +4,7 @@ import QtMultimedia 5.0
 import "./js/utils/log.js" as DebugLogger
 import "./js/Storage.js" as DB
 import "./js/Favorites.js" as FavoritesUtils
+import "./js/Utils.js" as Utils
 
 DockedPanel {
     id: player
@@ -35,12 +36,59 @@ DockedPanel {
     opacity: Qt.inputMethod.visible || !open ? 0.0 : 1.0
     Behavior on opacity { FadeAnimation {duration: 300}}
 
-//    Timer {
-//        interval: 10000; running: true; repeat: true
-//        onTriggered: {
-//            DebugLogger.logMetaData(audio)
-//        }
-//    }
+    SleepTimer {
+        id: sleepTimer
+
+        onTriggered: {
+            sleepTimerLabel.text = Utils.secToTimeString(sleepSec - count);
+        }
+        onSleepTriggered: {
+            if(isPlaying()) {
+                audio.stop()
+                stop();
+            }
+        }
+    }
+
+    PushUpMenu {
+        id: playerManu
+        MenuLabel {
+            text: qsTr("Sleep timer")
+        }
+
+        MenuLabelSmal {
+            id: sleepTimerLabel
+            visible: sleepTimer.running
+        }
+
+        MenuItem{
+            visible: sleepTimer.running
+            text: qsTr("Cancel")
+            onClicked: {
+                sleepTimer.stopTimer()
+            }
+        }
+
+        MenuItem {
+            visible: !sleepTimer.running
+            text: qsTr("Set")
+            onClicked: {
+                var sTime = DB.loadSleepTimer()
+                console.log("DB HOUR: " + sTime.hour)
+                console.log("DB MINUTE: " + sTime.minute)
+                var dialog = pageStack.push("Sailfish.Silica.TimePickerDialog", {
+                    hour: sTime.hour,
+                    minute: sTime.minute,
+                    hourMode: DateTime.TwentyFourHours
+                })
+                dialog.accepted.connect(function() {
+                    DB.updateSleepTimer(dialog.hour, dialog.minute)
+                    var sec = (dialog.minute + (dialog.hour * 60)) * 60;
+                    sleepTimer.startTimer(sec);
+                })
+            }
+        }
+    }
 
     Item {
         anchors.fill: parent

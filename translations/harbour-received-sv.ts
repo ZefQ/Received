@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AudioPlayer</name>
+    <message>
+        <source>Sleep timer</source>
+        <translation>insomningstimer</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Set</source>
+        <translation>Ställ</translation>
+    </message>
+</context>
+<context>
     <name>Browse</name>
     <message>
         <source>Top 100</source>

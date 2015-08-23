@@ -35,7 +35,9 @@ OTHER_FILES += qml/harbour-received.qml \
     qml/pages/Browse.qml \
     translations/harbour-received-sv.ts \
     qml/pages/Stations.qml \
-    qml/pages/BrowseByCategory.qml
+    qml/pages/BrowseByCategory.qml \
+    qml/components/MenuLabelSmal.qml \
+    qml/components/SleepTimer.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

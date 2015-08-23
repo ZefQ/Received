@@ -8,12 +8,15 @@ var settings = {
     version: "",
     description: "unofficial rad.io client",
     size: 1000000,
-    latestVersion: 1
+    latestVersion: 3
 }
 
 var dbVersions = {
     1: 'CREATE TABLE IF NOT EXISTS stations(id INTEGER PRIMARY KEY,\
-            name TEXT, pictureBaseURL TEXT, picture1Name TEXT, country TEXT, genre TEXT);'
+            name TEXT, pictureBaseURL TEXT, picture1Name TEXT, country TEXT, genre TEXT);',
+    2: 'CREATE TABLE IF NOT EXISTS SleepTimer(hour INTEGER, minute INTEGER)',
+    3: 'INSERT INTO SleepTimer values(0, 20)'
+
 }
 
 function openDB() {
@@ -25,9 +28,8 @@ function openDB() {
                                                settings.description,
                                                settings.size);
 
-    //dropDB();
-
     var currentVersion = (db.version === "") ? 0 : parseInt(db.version);
+    console.log("CURRENT DB VERSION: " + currentVersion)
 
     // Update database to latest version
     for(; currentVersion < settings.latestVersion; ++currentVersion) {
@@ -85,6 +87,25 @@ function stationExists(station) {
     });
     console.log("STATION EXISTS RESULTS: " + results.rows.length)
     return results.rows.length === 1
+}
+
+function loadSleepTimer() {
+    var results;
+    openDB();
+    db.transaction(function(tx) {
+        results = tx.executeSql("SELECT hour, minute FROM SleepTimer LIMIT 1");
+    });
+    return results.rows.item(0);
+}
+
+function updateSleepTimer(h, m) {
+    var result;
+    openDB();
+    db.transaction(function(tx) {
+        result = tx.executeSql('UPDATE SleepTimer SET hour=?, minute=?', [h, m])
+
+    });
+    return result;
 }
 
 function dropDB() {
